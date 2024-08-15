@@ -1,7 +1,46 @@
 <?php
 
-include 'backend/temp_config.php';
-$conn->close();
+include 'backend/config.php';
+include 'backend/images_render.php';
+$conn = connect_db();
+
+// Capture pid and cid from URL
+$pid = isset($_GET['pid']) ? intval($_GET['pid']) : 0;
+$cid = isset($_GET['cid']) ? intval($_GET['cid']) : 0;
+
+
+// Fetch categories and products
+$query = "SELECT * FROM products WHERE category_id = :cid";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(':cid', $cid, PDO::PARAM_INT);
+$stmt->execute();
+
+$current = [];
+$products = [];
+
+// Fetch the product details
+while ($product = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $product_id = $product['id'];
+    echo "<script>console.log('$product_id');</script>";
+    if ($product && $product_id == $pid) {
+        // Assign product details to variables        
+        $productName = $product['name'];
+        $productPrice = $product['price'];
+        $productDescription = $product['description'];
+        $productSpecialisation = $product['specialisation'];
+        $productImage = $product['image'] ?? "";
+        // $productImage = $base_url . '/assets/images/' . $product['image'];
+        $TestImage =findImageByProductName($product['name'], $productImages, $base_url) ?? "";
+        echo "<script>console.log('$TestImage');</script>";
+        break;
+    } else {
+        // Redirect to 404 if product not found
+        // header("Location: /goya_php/404.php");
+        // exit();
+    }
+}
+
+
 
 ?>
 
@@ -12,11 +51,11 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
-    <link rel="stylesheet" href="assets/css/product.css">
-    <link rel="stylesheet" href="assets/css/head&foot.css">
-    <link rel="stylesheet" href="assets/css/cart.css">
-    <script src="assets/js/cart.js"></script>
-    <script src="assets/js/head&foot.js"></script>
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/product.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/head&foot.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/cart.css">
+    <script src="<?php echo $base_url; ?>assets/js/cart.js"></script>
+    <script src="<?php echo $base_url; ?>assets/js/head&foot.js"></script>
 </head>
 
 <body>
@@ -30,27 +69,27 @@ $conn->close();
 
     <div class="showcase">
         <div class="w3-content">
-            <img class="mySlides" src="assets/images/Rectangle 10.png" style="display:none">
-            <img class="mySlides" src="assets/images/Rectangle 13.png">
-            <img class="mySlides" src="assets/images/Rectangle 76.png" style="display:none">
+            <img class="mySlides" src="<?php echo $base_url; ?>assets/images/Rectangle 10.png" style="display:none">
+            <img class="mySlides" src="<?php echo $base_url; ?>assets/images/Rectangle 13.png">
+            <img class="mySlides" src="<?php echo $base_url; ?>assets/images/Rectangle 76.png" style="display:none">
 
             <div class="w3-row-padding w3-section">
                 <div class="w3-col s4">
-                    <img class="demo d1" src="assets/images/Rectangle 10.png" onclick="currentDiv(1)">
+                    <img class="demo d1" src="<?php echo $base_url; ?>assets/images/Rectangle 10.png" onclick="currentDiv(1)">
                 </div>
                 <div class="w3-col s4">
-                    <img class="demo d2" src="assets/images/Rectangle 13.png" style="opacity: 100%;" onclick="currentDiv(2)">
+                    <img class="demo d2" src="<?php echo $base_url; ?>assets/images/Rectangle 13.png" style="opacity: 100%;" onclick="currentDiv(2)">
                 </div>
                 <div class="w3-col s4">
-                    <img class="demo d3" src="assets/images/Rectangle 76.png" onclick="currentDiv(3)">
+                    <img class="demo d3" src="<?php echo $base_url; ?>assets/images/Rectangle 76.png" onclick="currentDiv(3)">
                 </div>
             </div>
         </div>
         <div class="pinteraction">
-            <h1>Photo Frame</h1>
-            <img src="assets/images/star_gray.png" alt="" style="display: inline-block;">
+            <h1><?php echo htmlspecialchars($productName); ?></h1>
+            <img src="<?php echo $base_url; ?>assets/images/star_gray.png" alt="" style="display: inline-block;">
             <p style="display: inline-block;">(4.9)</p>
-            <h4>Rs. 2096</h4>
+            <h4>$ <?php echo htmlspecialchars($productPrice); ?></h4>
             <form action="">
                 <label for="">Name</label><br>
                 <input type="text" placeholder="Name" class="name"><br><br>
@@ -62,7 +101,7 @@ $conn->close();
                 <h4>Gift Wrap</h4>
                 <input type="checkbox" id="gift">
                 <Label for="gift">Yes,wrap it!(+Rs 50.0)</Label><br>
-                <button class="add-to-cart" data-product="Fridge Magnet" data-price="1999" data-image="assets/images/Rectangle 13.png">Add To Cart</button><br>
+                <button class="add-to-cart" data-product="Fridge Magnet" data-price="1999" data-image="<?php echo $base_url; ?>assets/images/Rectangle 13.png">Add To Cart</button><br>
                 <a href="checkout.php"><input class="buynow" type="button" value="Buy It Now"></a>
             </form>
             <div class="qtext">
@@ -75,14 +114,12 @@ $conn->close();
             </div>
             <div class="description drop">
                 <h4>Description</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-
+                <p><?php echo htmlspecialchars($productDescription); ?></p>
                 <h1 class="dropicon">^</h1>
             </div>
             <div class="Specialization drop">
                 <h4>Product Specialization</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-
+                <p><?php echo htmlspecialchars($productSpecialisation); ?></p>
                 <h1 class="dropicon">^</h1>
             </div>
         </div>
@@ -99,13 +136,13 @@ $conn->close();
             </div>
         </div>
         <div class="likeproduct">
-            <img src="assets/images/Rectangle 10.png" alt="">
-            <img src="assets/images/Rectangle 11.png" alt="">
-            <img src="assets/images/Rectangle 12.png" alt="">
-            <img src="assets/images/Rectangle 13.png" alt="">
-            <img src="assets/images/Rectangle 15.png" alt="">
-            <img src="assets/images/Rectangle 16.png" alt="">
-            <img src="assets/images/Rectangle 9.png" alt="">
+            <img src="<?php echo $base_url; ?>assets/images/Rectangle 10.png" alt="">
+            <img src="<?php echo $base_url; ?>assets/images/Rectangle 11.png" alt="">
+            <img src="<?php echo $base_url; ?>assets/images/Rectangle 12.png" alt="">
+            <img src="<?php echo $base_url; ?>assets/images/Rectangle 13.png" alt="">
+            <img src="<?php echo $base_url; ?>assets/images/Rectangle 15.png" alt="">
+            <img src="<?php echo $base_url; ?>assets/images/Rectangle 16.png" alt="">
+            <img src="<?php echo $base_url; ?>assets/images/Rectangle 9.png" alt="">
         </div>
     </div>
     <div class="review">
@@ -122,31 +159,31 @@ $conn->close();
         <div class="revdisplay">
             <div class="indiviRev">
                 <h2>loreum ipsum</h2>
-                <img src="assets/images/star_black.png" alt="">
+                <img src="<?php echo $base_url; ?>assets/images/star_black.png" alt="">
                 <h6>(4.9)</h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
             </div>
             <div class="indiviRev">
                 <h2>loreum ipsum</h2>
-                <img src="assets/images/star_black.png" alt="">
+                <img src="<?php echo $base_url; ?>assets/images/star_black.png" alt="">
                 <h6>(4.9)</h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
             </div>
             <div class="indiviRev">
                 <h2>loreum ipsum</h2>
-                <img src="assets/images/star_black.png" alt="">
+                <img src="<?php echo $base_url; ?>assets/images/star_black.png" alt="">
                 <h6>(4.9)</h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
             </div>
             <div class="indiviRev">
                 <h2>loreum ipsum</h2>
-                <img src="assets/images/star_black.png" alt="">
+                <img src="<?php echo $base_url; ?>assets/images/star_black.png" alt="">
                 <h6>(4.9)</h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
             </div>
             <div class="indiviRev">
                 <h2>loreum ipsum</h2>
-                <img src="assets/images/star_black.png" alt="">
+                <img src="<?php echo $base_url; ?>assets/images/star_black.png" alt="">
                 <h6>(4.9)</h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
             </div>

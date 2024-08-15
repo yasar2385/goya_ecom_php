@@ -1,34 +1,12 @@
 <?php
 
-include 'backend/temp_config.php';
+include 'backend/config.php';
+include 'backend/images_render.php';
 
 $conn = connect_db();
-// Read the JSON file
-$jsonFilePath = 'inputs/product_images.json';
-$jsonContent = file_get_contents($jsonFilePath);
 
-if ($jsonContent === false) {
-    die("Error reading JSON file");
-}
-
-$productData = json_decode($jsonContent, true);
-if (json_last_error() !== JSON_ERROR_NONE) {
-    die("Error decoding JSON: " . json_last_error_msg());
-}
-
-$productImages = $productData['images'];
-// Function to find image by product name
-function findImageByProductName($productName, $productImages)
-{
-    foreach ($productImages as $product) {
-        if (strtolower($product['name']) === strtolower($productName)) {
-            return $product['image'];
-        }
-    }
-    return 'assets/images/default-product-image.png'; // Default image if not found
-}
 // Fetch categories and products
-$query = "SELECT c.*, p.id AS product_id, p.name AS product_name, p.price
+$query = "SELECT c.*, p.id AS product_id, p.name AS product_name, p.short_code AS product_code, p.price
           FROM categories c
           LEFT JOIN products p ON c.id = p.category_id
           ORDER BY c.id, p.id";
@@ -59,12 +37,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
     // Process product
     if ($row['product_id']) {
-        $productImage = findImageByProductName($row['product_name'], $productImages);
+        $productImage = findImageByProductName($row['product_name'], $productImages, $base_url);
         $products[] = [
             'id' => $row['product_id'],
             'name' => $row['product_name'],
             'price' => $row['price'],
-            'category_id' => $category_id,
+            'c_id' => $category_id,
+            'short_code' => $row['product_code'],
             'image' => $productImage
         ];
     }
@@ -76,6 +55,7 @@ function debug_one($var)
 {
     echo "<script>console.log(" . json_encode($var) . ");</script>";
 }
+
 
 
 ?>
@@ -90,9 +70,9 @@ function debug_one($var)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/category_style.css">
-    <link rel="stylesheet" href="assets/css/head&foot.css">
-    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/category_style.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/head&foot.css">
+    <link rel="stylesheet" href="<?php echo $base_url; ?>assets/css/cart.css">
 </head>
 
 <body>
@@ -173,17 +153,19 @@ function debug_one($var)
     </section>
 
     <!-- script files -->
-    <script src="assets/js/cart.js"></script>
-    <script src="assets/js/category_script.js"></script>
-    <script src="assets/js/sorting_script.js"></script>
-    <script src="assets/js/head&foot.js"></script>
+    <script src="<?php echo $base_url; ?>assets/js/cart.js"></script>
+    <script src="<?php echo $base_url; ?>assets/js/category_script.js"></script>
+    <script src="<?php echo $base_url; ?>assets/js/sorting_script.js"></script>
+    <script src="<?php echo $base_url; ?>assets/js/head&foot.js"></script>
     <!-- Placeholder for footer -->
 
     <?php
     include 'component/footer.php';
     $decode = json_encode($products);
-    echo "<script>renderProducts($decode);</script>";
+    echo "<script>renderProducts(" . $decode. ", '$base_url');</script>";
+
     ?>
+
 </body>
 
 </html>

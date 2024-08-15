@@ -1,5 +1,9 @@
 <?php
 
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+$base_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . "/goya_php/";
+
+
 require_once __DIR__ . '/server/vendor/autoload.php';
 require_once __DIR__ . '/server/logger.php';
 
@@ -59,10 +63,9 @@ function connect_db()
     } catch (PDOException $e) {
         die("Connection failed: " . $e->getMessage());
     }
-    
+
     $message = "User $db has $user at $timestamp.";
     logMessage($message);
     debug($message);
     return $pdo;
 }
-

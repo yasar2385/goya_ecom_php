@@ -20,6 +20,9 @@ test5@gmail.com
 Test!5555
 
 
+http://localhost/goya_php/product/mug?name=digital-clock
+localhost/product.php?name=digital-clock
+
 
 https://chatgpt.com/share/9a463b0c-4a7d-4084-b651-6578765999c4
 

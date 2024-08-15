@@ -72,15 +72,19 @@ const products = [{},
     }
 ];
 
-const renderProducts = (sortedProducts) => {
+const renderProducts = (sortedProducts, baseUrl) => {
     const container = document.querySelector('.pro-list');
     container.innerHTML = '';
     sortedProducts.forEach(product => {
-        if(!product.name) return;
+        if (!product.name) return;
+        if (product.image.includes('default-product-image')) {
+            baseUrl = "";
+        }
+        let src = (baseUrl ? baseUrl : "") + product.image;
         const productElement = document.createElement('div');
         productElement.classList.add('product-container');
         productElement.innerHTML = `<div class="product">
-                <a href="product" data-prod-id="${product.id}" data-cate-id="${product.category_id}"><img src="${product.image}" alt="${product.name}"></a>
+                <a href="product/${product.short_code}?pid=${product.id}&cid=${product.c_id}" data-prod-id="${product.id}" data-cate-id="${product.c_id}"><img src="${src}" alt="${product.name}"></a>
                 <div class="features">
                     <h5>${product.name}</h5>
                     <div class="star">

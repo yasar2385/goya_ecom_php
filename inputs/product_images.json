@@ -3,46 +3,58 @@
             "name": "Personalized Mug",
             "price": 250,
             "sales": 300,
-            "image": "assets/images/product-img2.jpg"
+            "image": "assets/images/product-mug-person.jpg"
+        },
+        {
+            "name": "Magic Mug",
+            "price": 250,
+            "sales": 300,
+            "image": "assets/images/product-mug-magic.jpg"
+        },
+        {
+            "name": "Polymer Mug",
+            "price": 250,
+            "sales": 300,
+            "image": "assets/images/product-mug-polymer.png"
         },
         {
             "name": "Photo Frame",
             "price": 2096,
             "sales": 150,
-            "image": "assets/images/product-img5.jpg"
+            "image": "assets/images/product-photo-frame.jpg"
         },
         {
             "name": "Wedding Caricature",
             "price": 750,
             "sales": 200,
-            "image": "assets/images/product-img3.jpg"
+            "image": "assets/images/product-wedding-caricature.jpg"
         },
         {
             "name": "LED Pillow (Heart Shape)",
             "price": 750,
             "sales": 100,
-            "image": "assets/images/product-img4.jpg"
+            "image": "assets/images/product-led-pillow-heart.jpg"
         },
         {
             "name": "Moon Frame",
             "price": 800,
             "sales": 250,
-            "image": "assets/images/product-img1.jpg"
+            "image": "assets/images/product-moon-frame.jpg"
         },
         {
             "name": "Heart Clock",
             "price": 1000,
             "sales": 350,
-            "image": "assets/images/product-img6.jpg"
+            "image": "assets/images/product-heart-clock.jpg"
         },
         {
             "name": "Polyester T-Shirt",
             "price": 450,
             "sales": 50,
-            "image": "assets/images/product-img7.jpg"
+            "image": "assets/images/product-poly-t-shirt.jpg"
         },
         {
-            "name": "Digtal Clock",
+            "name": "Digital Clock",
             "price": 500,
             "date": "2023-06-12",
             "sales": 500,

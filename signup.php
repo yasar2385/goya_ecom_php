@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 // Include necessary files
-require_once 'backend/temp_config.php';
+require_once 'backend/config.php';
 
 // Function to check if email exists in the database
 function isEmailExists($conn, $email)
