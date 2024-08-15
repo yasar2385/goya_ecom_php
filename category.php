@@ -1,6 +1,8 @@
 <?php
 
 include 'backend/temp_config.php';
+
+$conn = connect_db();
 // Read the JSON file
 $jsonFilePath = 'inputs/product_images.json';
 $jsonContent = file_get_contents($jsonFilePath);
@@ -15,7 +17,6 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 }
 
 $productImages = $productData['images'];
-
 // Function to find image by product name
 function findImageByProductName($productName, $productImages)
 {
@@ -31,18 +32,13 @@ $query = "SELECT c.*, p.id AS product_id, p.name AS product_name, p.price
           FROM categories c
           LEFT JOIN products p ON c.id = p.category_id
           ORDER BY c.id, p.id";
-
-$result = mysqli_query($conn, $query);
-
-if (!$result) {
-    die("Query failed: " . mysqli_error($conn));
-}
-
+$stmt = $conn->prepare($query);
+$stmt->execute();
 
 $categories = [];
 $products = [];
 
-while ($row = mysqli_fetch_assoc($result)) {
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $category_id = $row['id'];
 
     // Process category
@@ -74,10 +70,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     }
 }
 
-mysqli_close($conn);
 
 // Debug function
-function debug($var)
+function debug_one($var)
 {
     echo "<script>console.log(" . json_encode($var) . ");</script>";
 }
