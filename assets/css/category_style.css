@@ -1,0 +1,902 @@
+.product-section {
+    padding: 20px;
+    font-family: "Kumbh Sans", sans-serif;
+
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+
+}
+
+.left-side,
+.right-side {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px;
+}
+
+
+.left-side {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.right-side {
+    flex: 3;
+
+}
+
+.left-side h3 {
+    color: rgba(104, 37, 29, 1);
+    text-align: center;
+}
+
+.right-line {
+    padding: 0.1rem;
+    width: 150px;
+    border: none;
+    border-radius: 2rem;
+    background-color: rgba(170, 108, 83, 0.5);
+    align-items: center;
+    margin-bottom: 0%;
+}
+
+.head-line {
+    padding: 0.1rem;
+    width: 150px;
+    border: none;
+    border-radius: 2rem;
+    background-color: rgba(170, 108, 83, 0.5);
+    margin: 0 auto;
+}
+
+
+.right-head h2 {
+    color: rgba(104, 37, 29, 1);
+    margin-top: 12px;
+    margin-left: 0px;
+    display: block;
+    text-align: center;
+
+}
+
+.line {
+    padding: 0.02rem;
+    width: auto;
+    border: none;
+    background-color: rgba(170, 108, 83, 1);
+}
+
+.right-side {
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.dropbtn {
+    background-color: #ffffff41;
+    color: rgba(104, 37, 29, 1);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-icon {
+    font-size: 12px;
+    margin-left: auto;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    max-width: 300px;
+    /* Set a maximum width */
+    overflow: hidden;
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+    /* Hide overflow */
+    text-overflow: ellipsis;
+    /* Show ellipsis (...) for overflowed text */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(170, 108, 83, 0.5);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #ffffff;
+}
+
+.product-container {
+    width: 30%;
+    min-width: 200px;
+    padding: 0 0px;
+    box-sizing: border-box;
+
+}
+
+.product-container .product {
+    width: 100%;
+    min-width: 200px;
+    padding: 0px;
+    border: 0.5px solid #3234323f;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin-bottom: 15px;
+    transition: 0.2s ease;
+    position: relative;
+}
+
+.product-container .product img {
+    width: 90%;
+    border-radius: 20px;
+    padding: 10px 10px;
+}
+
+.product-container .product .features {
+    text-align: start;
+    padding: 2px 20px;
+}
+
+.features h5,
+.features h4 {
+    color: #060606;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.features h4 {
+    font-weight: bold;
+}
+
+.star-icon {
+    color: goldenrod;
+}
+
+.pro-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: rgba(155, 90, 70, 1);
+    padding: 5px 20px;
+    font-size: 16px;
+    border: 1px solid rgba(155, 90, 70, 1);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.hid-btn {
+    background-color: transparent;
+    color: rgba(155, 90, 70, 1);
+    padding: 5px 16px;
+    font-size: 16px;
+    border: 1px solid rgba(155, 90, 70, 1);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: rgba(155, 90, 70, 1);
+    color: white;
+}
+
+.filter-icon {
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.filter-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.filter-dropdown-content a {
+    color: black;
+    font-size: 14px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.filter-dropdown-content a:hover {
+    background-color: rgba(170, 108, 83, 0.5);
+}
+
+.filter-dropdown:hover .filter-dropdown-content {
+    display: block;
+}
+
+.hidden-btn {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+}
+
+.close-btn {
+    display: none;
+}
+
+.button {
+    background-color: transparent;
+    /* Example background color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgba(104, 37, 29, 1);
+
+}
+
+.button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.right-btn {
+    margin-bottom: 30px;
+    display: flex;
+}
+
+/* Adjust for medium screens (tablets, small laptops) */
+
+@media screen and (max-width: 1060px) {
+    .left {
+        display: block;
+        /* Display the left sidebar on larger screens */
+        transform: translateX(0%);
+        /* Ensure it's in the original position */
+    }
+
+    .pro-list {
+        justify-content: space-between;
+    }
+
+    .product-container {
+        padding: 0px;
+        margin-bottom: 20px;
+    }
+
+    .product-container .product {
+        width: 100%;
+        /* Make product take full width of container */
+        transition: 0.2s ease;
+        position: relative;
+    }
+
+    .product-container .product img {
+        width: 90%;
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+
+    .hidden-btn {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:980px) {
+    .right-side {
+        padding: 0px;
+    }
+
+    .pro-list {
+        padding: 0px;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (max-width:914px) {
+    .left-side {
+        display: none;
+        /* Display the left sidebar on larger screens */
+    }
+
+    .pro-list {
+        justify-content: space-around;
+    }
+
+    .product-container {
+        margin-bottom: 20px;
+    }
+
+    .product-container .product {
+        transition: 0.2s ease;
+        position: relative;
+    }
+
+    .product-container .product img {
+        width: 90%;
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+
+    .hidden-btn {
+        display: none;
+    }
+}
+
+/* Adjust for small screens (mobile devices) */
+@media screen and (max-width: 860px) {
+
+    .product-container {
+        padding: 0 20px;
+        margin-bottom: 10px;
+    }
+
+    .product-container .product {
+        width: 100%;
+        /* Make product take full width of container */
+    }
+
+    .product-container .product img {
+        width: 90%;
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+
+    /* Hide the left section by default */
+    .left-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* Show the left section when it has the active class */
+    .left-side.active {
+        left: 0;
+    }
+
+    body.active-left-side {
+        overflow: hidden;
+    }
+
+    .hidden-btn {
+        display: initial;
+    }
+
+    .line {
+        padding: 0.01rem;
+        width: 240px;
+    }
+
+    /* Close button styles */
+    .close-btn {
+        display: initial;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+}
+
+/* Adjust for extra small screens (very small mobile devices) */
+@media screen and (max-width: 830px) {
+    .product-container {
+        padding: 0 10px;
+        margin-bottom: 0px;
+    }
+
+    .product-container .product {
+        width: 100%;
+    }
+
+    .product-container .product img {
+        width: 90%;
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+
+    .left-side {
+        display: none;
+        margin-left: 0;
+    }
+
+    .left-side.active {}
+
+    .hidden-btn {
+        display: initial;
+    }
+
+    /* Hide the left section by default */
+    .left-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        left: -400px;
+        width: 300px;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    .line {
+        padding: 0.01rem;
+        width: 250px;
+    }
+
+    /* Show the left section when it has the active class */
+    .left-side.active {
+        left: 0;
+        margin-left: 0;
+    }
+
+    body.active-left-side {
+        overflow: hidden;
+    }
+
+    .hidden-btn {
+        display: initial;
+    }
+
+    /* Close button styles */
+    .close-btn {
+        display: initial;
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    .pro-list {
+        justify-content: space-between;
+    }
+
+    .product-container {
+        padding: 0 10px;
+        margin-bottom: 10px;
+    }
+
+    .product-container .product {
+        width: 100%;
+    }
+
+    .product-container .product img {
+        width: 90%;
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+
+    .dropbtn {
+        padding: 16px;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .dropdown-icon {
+        font-size: 12px;
+        margin-left: auto;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ffffff;
+        min-width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+
+
+    /* left side */
+    .left-side {
+        width: 40%;
+    }
+
+    .left-side h3 {
+        text-align: center;
+        font-size: 18px;
+        margin: 10px 10px;
+    }
+
+    .dropdown-content a {
+        font-size: 12px;
+    }
+
+    .head-line {
+        padding: 0.1rem 0;
+        width: 120px;
+        margin: 0 auto;
+    }
+
+    .line {
+        padding: 0.01rem;
+        width: 180px;
+    }
+
+    /* Close button styles */
+    .close-btn {
+        display: initial;
+        position: absolute;
+        top: 8px;
+        right: 18px;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width:541px) {
+
+    .pro-list {
+        margin-top: 20px;
+        justify-content: space-between;
+    }
+
+    .product-container {
+        padding: 0px;
+        margin-bottom: 5px;
+    }
+
+    .right-head {
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+
+    .right-line {
+        display: none;
+    }
+
+    .product-container .product {
+        width: 100%;
+    }
+
+    .product-container .product img {
+        width: 90%;
+        border-radius: 20px;
+        padding: 10px 10px;
+    }
+
+    .filter-btn {
+        font-size: 12px;
+        border-radius: 5px;
+    }
+
+    .hid-btn {
+        font-size: 12px;
+        border-radius: 5px;
+    }
+
+    .left-side h3 {
+        text-align: center;
+        font-size: 12px;
+        margin: 10px 10px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 10px 10px;
+    }
+
+    .dropdown-content a {
+        font-size: 12px;
+    }
+
+    .line {
+        padding: 0.01rem;
+        width: 130px;
+    }
+}
+
+
+@media screen and (max-width:431px) {
+
+    /* Existing CSS for .left-side */
+    .left-side {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease-in-out;
+        z-index: 1000;
+    }
+
+    /* Updated CSS for .left-side.active to enable scrolling */
+    .left-side.active {
+        overflow-y: auto;
+        /* Enable vertical scrolling */
+    }
+
+
+    .pro-list {
+        margin-left: 0px;
+    }
+
+    .left-side.active {
+        margin-left: 0px;
+    }
+
+    .product-container {
+        padding: 0px 20px;
+        min-width: 160px;
+        margin-bottom: 5px;
+    }
+
+    .product-container .product {
+        min-width: 100%;
+    }
+
+    .product-container .product img {
+        width: 90%;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .left-side h3 {
+        font-size: 10px;
+        margin: 10px 5px;
+    }
+
+    .head-line {
+        padding: 0.08rem 0;
+        width: 80px;
+        margin: 0 auto;
+    }
+
+    .dropbtn {
+        padding: 10px;
+        font-size: 10px;
+        align-items: center;
+    }
+
+    .button {
+        font-size: 10px;
+        padding: 10px 10px;
+
+    }
+
+    .close-btn {
+        top: 6px;
+        right: 12px;
+    }
+
+    .line {
+        padding: 0.01rem;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .pro-list {
+        justify-content: center;
+    }
+
+    .dropdown-content {
+        max-width: 130px;
+    }
+
+
+
+    .product-container {
+        padding: 0px 5px;
+        min-width: 175px;
+        margin-bottom: 5px;
+    }
+
+    .product-container .product {
+        min-width: 100%;
+    }
+
+    .product-container .product img {
+        width: 90%;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .line {
+        padding: 0.01rem;
+        width: 100px;
+    }
+
+    .product-container .product .features h5 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .features h5 {
+        width: 100%;
+        /* Adjust as needed */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+    }
+
+
+}
+
+
+@media screen and (max-width:391px) {
+    .pro-list {
+        justify-content: initial;
+        margin-left: 0px;
+
+    }
+
+    .product-container {
+        padding: 0px 4px;
+        min-width: 146px;
+        margin-bottom: 5px;
+    }
+
+    .product-container .product {
+        min-width: 100%;
+    }
+
+    .product-container .product img {
+        width: 80%;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .features h5,
+    .features h4 {
+        font-size: 12px;
+
+    }
+}
+
+
+@media screen and (max-width:376px) {
+    .pro-list {
+        justify-content: center;
+    }
+
+    .product-container {
+        padding: 0px 5px;
+        min-width: 138px;
+        margin-bottom: 5px;
+    }
+
+    .product-container .product {
+        min-width: 100%;
+    }
+
+    .product-container .product img {
+        width: 80%;
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+}
+
+@media screen and (max-width:361px) {
+
+    .product-container {
+        padding: 0px 2px;
+        min-width: 132px;
+        margin-bottom: 5px;
+    }
+
+    .product-container .product {
+        min-width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width:345px) {
+    .pro-list {
+        justify-content: space-between;
+        margin-left: 0px;
+    }
+
+    .product-container {
+        min-width: 120px;
+        height: auto;
+    }
+
+    .product-container .product {
+        min-width: 100%;
+    }
+
+    .features h5,
+    .features h4 {
+        font-size: 10px;
+    }
+
+    .star-icon {
+        font-size: 12px;
+    }
+
+    .left-side {
+        width: 50%;
+    }
+}
+
+.price::before{
+    content: "₹ ";
+}

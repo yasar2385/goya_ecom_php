@@ -1,0 +1,73 @@
+{
+    "featuredProducts": [{
+            "name": "Photo Frame",
+            "price": "2096",
+            "imageSrc": "assets/images/product-img5.jpg",
+            "rating": 5,
+            "link": "product.php"
+        },
+        {
+            "name": "Personalized Mug",
+            "price": "250",
+            "imageSrc": "assets/images/product-img2.jpg",
+            "rating": 5,
+            "link": "product.php"
+        },
+        {
+            "name": "Wedding Caricature",
+            "price": "750",
+            "imageSrc": "assets/images/product-img3.jpg",
+            "rating": 5,
+            "link": "product.php"
+        },
+        {
+            "name": "LED Pillow (Heart Shape)",
+            "price": "750",
+            "imageSrc": "assets/images/product-img4.jpg",
+            "rating": 5,
+            "link": "product.php"
+        },
+        {
+            "name": "Moon Frame",
+            "price": "800",
+            "imageSrc": "assets/images/product-img1.jpg",
+            "rating": 5,
+            "link": "product.php"
+        },
+        {
+            "name": "Heart Clock",
+            "price": "1000",
+            "imageSrc": "assets/images/product-img6.jpg",
+            "rating": 5,
+            "link": "product.php"
+        },
+        {
+            "name": "Polyester T-Shirt",
+            "price": "450",
+            "imageSrc": "assets/images/product-img7.jpg",
+            "rating": 5,
+            "link": "product.php"
+        },
+        {
+            "name": "Digital Clock",
+            "price": "500",
+            "imageSrc": "assets/images/product-img8.jpg",
+            "rating": 5,
+            "link": "product.php"
+        },
+        {
+            "name": "Couple Lamp",
+            "price": "1000",
+            "imageSrc": "assets/images/product-img9.jpg",
+            "rating": 5,
+            "link": "product.php"
+        },
+        {
+            "name": "Mosaic Frame",
+            "price": "600",
+            "imageSrc": "assets/images/product-img9.jpg",
+            "rating": 5,
+            "link": "product.php"
+        }
+    ]
+}

@@ -1,0 +1,174 @@
+{
+    "items": [{},
+        {
+            "title": "Mug",
+            "short_code": "mug",
+            "subItems": [
+                "Magic Mug",
+                "Mini Mug",
+                "Personalized Mug",
+                "Polymer Mug"
+            ]
+        },
+        {
+            "title": "Key Chains",
+            "short_code": "keychain",
+            "subItems": [
+                "MDF KeyChain",
+                "Plastic with Metal Sheet (Double Side)",
+                "Wooden KeyChain"
+            ]
+        },
+        {
+            "title": "Fridge Magnet",
+            "short_code": "fridge_magnet",
+            "subItems": [
+                "Fridge Magnet - Circle",
+                "Fridge Magnet - Rectangle"
+            ]
+        },
+        {
+            "title": "Pillows",
+            "short_code": "pillow",
+            "subItems": [
+                "LED Pillow - Heart",
+                "LED Pillow - Square",
+                "FUR Pillow - Heart",
+                "FUR Pillow - Square",
+                "Mini FUR Pillow"
+            ]
+        },
+        {
+            "title": "Photo Frame",
+            "short_code": "frame",
+            "subItems": [
+                "Photo Frame",
+                "Digital Art Frame",
+                "Mosaic Frame"
+            ]
+        },
+        {
+            "title": "Art",
+            "short_code": "art",
+            "subItems": [
+                "Art Digital",
+                "Art Imaginary"
+            ]
+        },
+        {
+            "title": "Polaroid",
+            "short_code": "polaroid",
+            "subItems": []
+        },
+        {
+            "title": "Puzzle",
+            "short_code": "puzzle",
+            "subItems": []
+        },
+        {
+            "title": "Sipper Bottle",
+            "short_code": "sip_bottle",
+            "subItems": []
+        },
+        {
+            "title": "Polyester T-Shit",
+            "short_code": "ploy_t_short",
+            "subItems": []
+        },
+        {
+            "title": "Clock",
+            "short_code": "clock",
+            "subItems": []
+        },
+        {
+            "title": "Digital Clock",
+            "short_code": "digit_clock",
+            "subItems": []
+        },
+        {
+            "title": "Pop Socket",
+            "short_code": "pop_socket",
+            "subItems": []
+        },
+        {
+            "title": "Rotating Lamp",
+            "short_code": "rot_lamp",
+            "subItems": []
+        },
+        {
+            "title": "Mouse Pad",
+            "short_code": "mouse_pad",
+            "subItems": []
+        },
+        {
+            "title": "MDF Lamp",
+            "short_code": "mdf_lamp",
+            "subItems": [
+                "Couple Lamp",
+                "Alphabet Lamp"
+            ]
+        },
+        {
+            "title": "MDF Table Frame",
+            "short_code": "mdf_tbl_lamp",
+            "subItems": [
+                "Anniversary Table Frame",
+                "Couple Table Frame",
+                "Birthday Frame"
+            ]
+        },
+        {
+            "title": "MDF Collage Wall Frame",
+            "short_code": "mdf_clg_wal_lamp",
+            "subItems": [
+                "Couple Collage",
+                "Moon Collage"
+            ]
+        },
+        {
+            "title": "MDF Clock",
+            "short_code": "mdf_clock",
+            "subItems": [
+                "Heart Clock",
+                "8 Photos Round Clock",
+                "12 Photos Round Clock"
+            ]
+        },
+        {
+            "title": "Caricature (Acrylic)",
+            "short_code": "caricature_acrylic",
+            "subItems": [
+                "Birthday Boy Caricature",
+                "Birthday Girl Caricature",
+                "Wedding Caricature",
+                "Couple Caricature",
+                "Couple Cycling Caricature"
+            ]
+        },
+        {
+            "title": "Magic Mirror",
+            "short_code": "magic_mirror",
+            "subItems": [
+                "Heart Magic Mirror",
+                "Round with Clock Magic Mirror",
+                "Round Magic Mirror"
+            ]
+        },
+        {
+            "title": "Wallet",
+            "short_code": "wallet",
+            "subItems": [
+                "Women's Wallet",
+                "Men's Wallet"
+            ]
+        },
+        {
+            "title": "3D Crystal Gifts",
+            "short_code": "3d_cryst_gift",
+            "subItems": [
+                "Cube Shape Crystal",
+                "Heart Shape Crystal"
+            ]
+        }
+    ]
+}

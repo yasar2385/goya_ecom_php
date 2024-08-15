@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #4a1c1c;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    background: url('goya(1).png') no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+}
+
+.left-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-summary {
+    flex: 1;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.payment-status {
+    background-color: #6a2d2d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.payment-status p{
+    color: white;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.input-group label {
+    margin: 0;
+    flex-grow: 1;
+    text-align: left;
+}
+
+section, aside {
+    flex: 1;
+}
+
+h2 {
+    color: #4a1c1c;
+}
+
+input[type="text"], input[type="email"], button {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin: 10px 0;
+}
+
+button {
+    background-color: #4a1c1c;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #6a2d2d;
+}
+
+.order-summary .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-summary .item img {
+    width: 75px;
+    height: 75px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.order-summary .total {
+    margin-top: 20px;
+}
+
+.total p {
+    margin: 5px 0;
+}
+
+@media (min-width: 768px) {
+    .checkout-container {
+        flex-direction: row;
+        gap: 20px;
+        height: auto;
+    }
+}

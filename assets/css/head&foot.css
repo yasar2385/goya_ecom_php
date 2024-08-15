@@ -1,0 +1,262 @@
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+.header {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    background-color: #520100;
+    height: 60px;
+    width: 100vw;
+}
+.header .logo {
+    height: 40px;
+    margin-left: 20px;
+}
+.header_right,#headbtn {
+    margin-left: auto; /* Push the elements to the right */
+    display: flex; /* Use flexbox for the elements inside header_right */
+    align-items: center; /* Align items vertically */
+}
+.header_right img{
+    height: 45px;
+    margin-right: 10px;
+}
+.header .loginBtn{
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: #AA6C53;
+    border: 1px solid white;
+    color: white;
+    font-weight:500;
+    font-size: 15px;
+    margin: 15px;
+}
+.search-box {
+    display: flex;
+    width: 100%;
+    /* Additional styles for the search box */
+}
+.search-box input{
+    min-width: 300px;
+    width: 40vw;
+    margin: 0px 0 0 30px;
+    height: 30px;
+    border-radius: 20px;
+    border: 0px;
+    padding: 0 10px;
+}
+.close-icon {
+    cursor: pointer;
+    color: white;
+    font-weight: 800;
+    /* border: 2px solid white; */
+    padding: 5px;
+    /* border-radius: 50px; */
+    margin-left: 10px;
+    margin-right: 15px;
+    /* Additional styles for the close icon */
+}
+
+.navbar {
+    display: inline-block;
+    align-items: center;
+    background-color: #3E1213;
+    height: 45px;
+    width: 100vw;
+    z-index: 2;
+}
+
+.menu-button {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 5px;
+}
+
+#navbar-items {
+    display: flex;
+    width: 600px;
+    justify-content: space-around;
+}
+marquee{
+    display: none;
+}
+#navbar-items li {
+    display: inline-block;
+}
+
+#navbar-items a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+    
+#navbar-items li:hover a{
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .search-box input{
+        min-width: 150px;
+    }
+    .navbar {
+        display: flex;
+        align-items: center;
+        background-color: #3E1213;
+        margin: 0px;
+        position: relative;
+        padding: 10px 0px 5px;
+    }
+    marquee{
+        display: block;
+    }
+    .menu-button {
+        display: block;
+        padding: 5px;
+        background-color: #AA6C53;
+        border-radius: 5px;
+        margin-left: 5px;
+    }
+    #navbar-items {
+        display: none;
+        margin: 0px;
+        width: auto;
+        position: absolute;
+        top: 55px;
+        background-color: #3E1213;
+    }
+    
+    #navbar-items.show {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        width: calc(100vw - 15px);
+    }
+    #navbar-items li {
+        z-index: 1;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        padding-left: 10vw;
+        background-color: #3E1213;
+    }
+    #navbar-items li:hover{
+        background-color: #9B5A46;
+        transition: 0.5s;
+        font-weight: 700;
+    }
+    #navbar-items a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+    }
+
+}
+
+.footer{
+    background-color: #3E1213;
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+.footer .logo{
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.f_content{
+    display: flex;
+    align-items: center;
+}
+.f_content .navigation ul{
+    list-style: none;
+}
+.f_content .navigation a{
+    text-decoration: none;
+    color: white;
+}
+.feature{
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+.f_content .navigation,.f_content .service{
+    border-right: 1px solid white;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.f_content .navigation{
+    flex: 1 1 0;
+}
+.f_content .service{
+    flex: 2 1 0;
+}
+.f_content .contactus{
+    flex: 2 1 0;
+    padding-left: 2%;
+}
+
+.f_content .navigation p{
+    font-size: 18px;
+    line-height: 40px;
+}
+.contactdetails .address{
+    display: inline-block;
+    margin-right: 10px;
+}
+.contactdetails .shopimg{
+    display: inline-block;
+    height: 150px;
+}
+.contactdetails .address .phoneicon{
+    background-color: white;
+    height: 17px;
+    border-radius: 50px;
+    padding: 3px;
+}
+.contactus .contactlogo img{
+    height: 40px;
+}
+.contactus .contactlogo{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+/* For screens smaller than 800px */
+@media only screen and (max-width: 800px) {
+    .f_content {
+        flex-direction: column; /* Stack the elements vertically */
+        align-items:start;
+    }
+    .f_content .navigation, .f_content .service {
+        border-right: none; /* Remove the border between navigation and service */
+        padding-right: 0; /* Adjust padding as needed */
+        margin-right: 0; /* Adjust margin as needed */
+        border-bottom: 1px solid white;
+        width: 95%;
+    }
+    .f_content .contactus {
+        margin-top: 20px; /* Adjust margin as needed */
+        border-bottom: 1px solid white;
+        width: 98%;
+    }
+}

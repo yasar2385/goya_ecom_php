@@ -1,0 +1,65 @@
+{
+    "images": [{
+            "name": "Personalized Mug",
+            "price": 250,
+            "sales": 300,
+            "image": "assets/images/product-img2.jpg"
+        },
+        {
+            "name": "Photo Frame",
+            "price": 2096,
+            "sales": 150,
+            "image": "assets/images/product-img5.jpg"
+        },
+        {
+            "name": "Wedding Caricature",
+            "price": 750,
+            "sales": 200,
+            "image": "assets/images/product-img3.jpg"
+        },
+        {
+            "name": "LED Pillow (Heart Shape)",
+            "price": 750,
+            "sales": 100,
+            "image": "assets/images/product-img4.jpg"
+        },
+        {
+            "name": "Moon Frame",
+            "price": 800,
+            "sales": 250,
+            "image": "assets/images/product-img1.jpg"
+        },
+        {
+            "name": "Heart Clock",
+            "price": 1000,
+            "sales": 350,
+            "image": "assets/images/product-img6.jpg"
+        },
+        {
+            "name": "Polyester T-Shirt",
+            "price": 450,
+            "sales": 50,
+            "image": "assets/images/product-img7.jpg"
+        },
+        {
+            "name": "Digtal Clock",
+            "price": 500,
+            "date": "2023-06-12",
+            "sales": 500,
+            "image": "assets/images/product-img8.jpg"
+        },
+        {
+            "name": "Couple Lamp",
+            "price": 1000,
+            "date": "2023-04-02",
+            "sales": 340,
+            "image": "assets/images/product-img9.jpg"
+        },
+        {
+            "name": "Mosaic Frame",
+            "price": 600,
+            "sales": 400,
+            "image": "assets/images/product-img10.jpg"
+        }
+    ]
+}

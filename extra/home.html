@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/head&foot.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/head&foot.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="home.php"><img class="logo" src="assets/images/header_goya_1.png"></a>
+
+        <div class="header_right" id="headerRight">
+            <div class="search-box" id="searchBox" style="display: none;">
+                <input type="text" placeholder="Search...">
+                <span class="close-icon" onclick="closeSearch()">X</span>
+            </div>
+            <div id="headbtn">
+
+                <img src="assets/images/search-svgrepo-com (2) 1.png" id="searchicon" onclick="toggleSearch()">
+                <img style="height: 25px;" src="assets/images/cart.png" id="carticon">
+                <a href="login.php"><button class="loginBtn">Login/SignUp</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <button class="menu-button" onclick="toggleNavbar()">
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+        <ul id="navbar-items" class="hidden">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="category.php">Customized Product</a></li>
+            <li><a href="category.php">Readymade Products</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+        <marquee style="color: white;">welcome back! have a great shopping</marquee>
+    </div>
+
+    <div class="cart" id="cart">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div class="cart-container">
+            <span class="left">Product</span>
+            <span class="right">Price</span>
+        </div>
+        <hr width="90%" size="2">
+        <div class="cart-body">
+            <ul id="cart-items"></ul>
+        </div>
+        <div class="cart-footer">
+            <p>Total: Rs.<span id="cart-total">0.00</span></p>
+            <a href="checkout.php"><button id="checkout">Check Out</button></a>
+        </div>
+    </div>
+    
+    <div class="slideshow-top">
+        <div class="topSlides fade">
+            <img src="assets/images/offer-banner.jpg" style="width:100%">
+        </div>
+
+        <div class="topSlides fade">
+            <img src="assets/images/image 1.png" style="width:100%">
+        </div>
+
+        <div class="topSlides fade">
+            <img src="assets/images/offer-banner.jpg" style="width:100%">
+        </div>
+
+        <a class="prev1" onclick="plusSlides1(-1)">❮</a>
+        <a class="next1" onclick="plusSlides1(1)">❯</a>
+
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot1" onclick="currentSlide1(1)"></span>
+        <span class="dot1" onclick="currentSlide1(2)"></span>
+        <span class="dot1" onclick="currentSlide1(3)"></span>
+    </div>
+
+    <div class="fulltesti">
+        <h1>Testimonials</h1>
+        <div class="testimonials">
+            <div class="revcard">
+                <img src="assets/images/Screenshot 2024-07-15 174353.png">
+                <div class="revcont">
+                    <h2>hello</h2>
+                    <p>"The quality of service provided by Zen Hook is exceptional. Their attention to detail and dedication to customer satisfaction is commendable."</p>
+                </div>
+            </div>
+            <div class="revcard">
+                <img src="assets/images/Screenshot 2024-07-15 174353.png">
+                <div class="revcont">
+                    <h2>hello</h2>
+                    <p>"The quality of service provided by Zen Hook is exceptional. Their attention to detail and dedication to customer satisfaction is commendable."</p>
+                </div>
+            </div>
+            <div class="revcard">
+                <img src="assets/images/Screenshot 2024-07-15 174353.png">
+                <div class="revcont">
+                    <h2>hello</h2>
+                    <p>"The quality of service provided by Zen Hook is exceptional. Their attention to detail and dedication to customer satisfaction is commendable."</p>
+                </div>
+            </div>
+            <div class="revcard">
+                <img src="assets/images/Screenshot 2024-07-15 174353.png">
+                <div class="revcont">
+                    <h2>hello</h2>
+                    <p>"The quality of service provided by Zen Hook is exceptional. Their attention to detail and dedication to customer satisfaction is commendable."</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="best">
+        <h2>Best Seller</h2>
+        <div class="bestseller">
+            <div class="bestproduct"><a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 9.png" alt="">
+                    <h3>Engraving gifts</h3>
+                </a>
+            </div>
+            <div class="bestproduct"><a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 8.png" alt="">
+                    <h3>Pillow</h3>
+            </div>
+            <div class="bestproduct"><a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 7.png" alt="">
+                    <h3>Mugs</h3>
+                </a>
+            </div>
+            <div class="bestproduct"><a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 6.png" alt="">
+                    <h3>Keychain</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="occassion">
+        <div class="occassionType"><a href="category.php">
+                <img src="assets/images/Ellipse 1.png" alt="">
+                <p>Birthday</p>
+            </a>
+        </div>
+        <div class="occassionType"><a href="category.php">
+                <img src="assets/images/Ellipse 2.png" alt="">
+                <p>Aniversary</p>
+            </a>
+        </div>
+        <div class="occassionType"><a href="category.php">
+                <img src="assets/images/Ellipse 3.png" alt="">
+                <p>Wedding</p>
+            </a>
+        </div>
+        <div class="occassionType"><a href="category.php">
+                <img src="assets/images/Ellipse 4.png" alt="">
+                <p>Baby Shower</p>
+            </a>
+        </div>
+    </div>
+    <div class="category">
+        <h1>Categories</h1>
+        <div class="categorygrid">
+            <div class="catimg">
+                <a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 70.png">
+                    <p>Name 1</p>
+                </a>
+            </div>
+            <div class="catimg">
+                <a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 71.png">
+                    <p>Name 2</p>
+                </a>
+            </div>
+            <div class="catimg">
+                <a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 72.png">
+                    <p>Name 3</p>
+                </a>
+            </div>
+            <div class="catimg">
+                <a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 9.png">
+                    <p>Name 4</p>
+                </a>
+            </div>
+            <div class="catimg">
+                <a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 74.png">
+                    <p>Name 5</p>
+                </a>
+            </div>
+            <div class="catimg">
+                <a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 75.png">
+                    <p>Name 6</p>
+                </a>
+            </div>
+            <div class="catimg">
+                <a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 7.png">
+                    <p>Name 7</p>
+                </a>
+            </div>
+            <div class="catimg">
+                <a href="product.php?i=1">
+                    <img src="assets/images/Rectangle 8.png">
+                    <p>Name 8</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="w3-content ">
+        <img class="mySlides" src="assets/images/image 1.png" style="width:100%">
+        <img class="mySlides" src="assets/images/image 1.png" style="width:100%">
+        <img class="mySlides" src="assets/images/image 1.png" style="width:100%">
+        <div class="w3-center" style="width:100%">
+            <div class="w3-left" onclick="plusDivs(-1)">&#10094;</div>
+            <div class="w3-right" onclick="plusDivs(1)">&#10095;</div>
+        </div>
+    </div>
+    <h2 style="text-align: center;">Featured Products</h2>
+    <div class="gridproduct">
+        <div class="row1">
+            <a href="product.php?i=1"><img src="assets/images/Rectangle 10.png" alt=""></a>
+            <a href="product.php?i=1"><img src="assets/images/Rectangle 12.png" alt=""></a>
+            <a href="product.php?i=1"><img src="assets/images/Rectangle 13.png" alt=""></a>
+        </div>
+        <div class="row2">
+            <a href="product.php?i=1"><img src="assets/images/Rectangle 11.png" alt=""></a>
+            <a href="product.php?i=1"><img src="assets/images/Rectangle 17.png" alt=""></a>
+        </div>
+        <div class="row3">
+            <a href="product.php?i=1"><img src="assets/images/Rectangle 15.png" alt=""></a>
+            <a href="product.php?i=1"><img src="assets/images/Rectangle 16.png" alt=""></a>
+            <a href="product.php?i=1"><img src="assets/images/Rectangle 18.png" alt=""></a>
+        </div>
+    </div>
+    <div class="footer">
+        <img class="logo" src="assets/images/header_goya_1.png">
+        <div class="f_content">
+            <div class="navigation">
+                <p><a href="home.php">Home</a><br>
+                    <a href="category.php">Customized Product</a><br>
+                    <a href="category.php">Readymade Products</a><br>
+                    <a href="">Contact Us</a></p>
+            </div>
+            <div class="service">
+                <h2>Our Service</h2>
+                <img src="assets/images/star_white.png" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            </div>
+            <div class="contactus">
+                <div class="contactdetails">
+                    <div class="address">
+                        <h2>Contact Us</h2>
+                        <p>Adress line 1 <br>Adress line 2<br>City - Pincode<br><br><img class="phoneicon" src="assets/images/phone.png" alt=""> +91 9876543210</p>
+                    </div>
+                    <img class="shopimg" src="assets/images/images.jpeg" alt="">
+                </div>
+                <div class="contactlogo">
+                    <a href=""><img src="assets/images/facebook 1.png" alt=""></a>
+                    <a href=""><img src="assets/images/instagram 1.png" alt=""></a>
+                    <a href=""><img src="assets/images/twitter 1.png" alt=""></a>
+                    <a href=""><img src="assets/images/youtube 1.png" alt=""></a>
+                    <a href=""><img src="assets/images/mail 1.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center;font-size: 13px;">2024 powered by @zenhook</p>
+        <div class="feature">
+            <div class="feature1">
+                <img src="assets/images/fast-delivery 1.png" alt="">
+                <p>Fast-delivery</p>
+            </div>
+            <div class="feature1">
+                <img src="assets/images/premium-quality 1.png" alt="">
+                <p>Premium Quality Assured</p>
+            </div>
+            <div class="feature1">
+                <img src="assets/images/retun-policy 1.png" alt="">
+                <p>Return Policy</p>
+            </div>
+        </div><br>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+        }
+    </script>
+
+    <script src="assets/js/home_script.js"></script>
+</body>
+
+</html>
