@@ -19,10 +19,10 @@ temp/**.*
 *.cache
 *.parcel-cache
 
-**/vendor/
+#**/vendor/
 
-php/server/composer.json
-php/server/composer.lock
+#php/server/composer.json
+#php/server/composer.lock
 
 #ignore files
 **/.ignore
