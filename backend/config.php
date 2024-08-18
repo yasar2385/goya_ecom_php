@@ -7,7 +7,10 @@ $base_url = $protocol . "://" . $_SERVER['HTTP_HOST'] . "/goya_php/";
 require_once __DIR__ . '/server/vendor/autoload.php';
 require_once __DIR__ . '/server/logger.php';
 
+
 use Dotenv\Dotenv;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 // Load environment variables from .env file
 $dotenv = Dotenv::createImmutable(__DIR__ . '/server');
@@ -69,3 +72,37 @@ function connect_db()
     debug($message);
     return $pdo;
 }
+
+function sendEmail($from, $to, $name, $subject, $body) {	
+	global $mailUser;
+	global $appPassword;
+	//echo "<script>console.log('User: ". $mailUser ."');</script>";
+    try {
+        $mail = new PHPMailer(true); // Set to true to enable exceptions
+        // Server settings (adjust these as needed)
+        $mail->SMTPDebug = 0; // Enable verbose debug output (optional)
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
+        $mail->SMTPSecure = 'tls';
+        $mail->SMTPAuth = true;
+
+        // Credentials (use app password, not your regular Gmail password)
+        $mail->Username = $mailUser;
+        $mail->Password = $appPassword; // Replace with your app password
+
+        // Email content
+        $mail->setFrom($from, $name);
+        $mail->addAddress($to, 'RecipientName');
+        $mail->Subject = $subject;
+        $mail->Body = $body;
+        $mail->isHTML(true); // Set to true if sending HTML content
+
+        $mail->send();
+        echo "<p style='color:green;'>Thank you for contacting us, $name. We will get back to you soon.</p>";
+    } catch (Exception $e) {
+        // echo "Error sending email: {$mail->ErrorInfo}";
+        echo "<p style='color:red;'>Error: Unable to send your message. Please try again later.</p>";
+        http_response_code(500);  // Set error status code
+    }
+}	

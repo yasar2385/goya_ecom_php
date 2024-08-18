@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.review-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.review-container h2 {
+    margin: 0 0 20px 0;
+}
+
+.review-avatar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.review-avatar img {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.rating {
+    margin-bottom: 20px;
+}
+
+.rating label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stars {
+    display: flex;
+    direction: ltr; /* Set direction to ltr for left-to-right stars */
+}
+.stars label {
+    margin-right: 10px; /* Adds gap between stars */
+}
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label i {
+    font-size: 20px;
+    color: transparent; /* Transparent star initially */
+    transition: color 0.2s ease-in-out;
+    -webkit-text-stroke: 1px #ccc; /* Stroke for the empty star look */
+    cursor: pointer;
+}
+
+.stars input[type="radio"]:checked ~ label i,
+.stars label:hover ~ label i,
+.stars label:hover i {
+    color: #f7b42c; /* Gold color on click or hover */
+    -webkit-text-stroke: 0; /* Remove stroke when filled */
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.review-text {
+    margin-bottom: 20px;
+}
+
+.review-text textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #590000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #4a0000;
+}

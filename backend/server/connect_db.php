@@ -19,6 +19,9 @@ $host = 'localhost';    // Database host
 $db = '';           // Database name
 $user = '';         // Database username
 $pass = '';             // Database password
+$mailUser="";
+$appPassword="";
+$mailReceiver="";
 
 $pdo;
 
@@ -28,7 +31,7 @@ $timestamp = date('Y-m-d H:i:s');
 function getEnvironment($host)
 {
 
-    global $environment, $db, $pass, $user, $timestamp, $host;
+    global $environment, $db, $pass, $user, $timestamp, $host, $mailUser, $appPassword, $mailReceiver;
     if (strpos($host, 'localhost') !== false) {
         $environment = 'local';
     } elseif (strpos($host, 'uat') !== false) {
@@ -40,10 +43,15 @@ function getEnvironment($host)
     $pass = $_ENV[strtoupper($environment) . '_DB_PASSWORD'];
     $user = $_ENV[strtoupper($environment) . '_DB_USER'];
 
-    // Example usage of the logMessage function    
-    // logMessage('User has logged in.', $logFile);    
+    // Example usage of the logMessage function
+    // logMessage('User has logged in.', $logFile);
     $message = "User $db has $user at $timestamp.";
     logMessage($message);
+
+    // Retrieve environment variables
+    $mailUser = $_ENV['FROM_MAIL'];
+    $appPassword = $_ENV['APP_PASSWORD'];
+    $mailReceiver = $_ENV['TO_MAIL'];
 
 }
 
