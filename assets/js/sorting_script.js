@@ -83,8 +83,9 @@ const renderProducts = (sortedProducts, baseUrl) => {
         let src = (baseUrl ? baseUrl : "") + product.image;
         const productElement = document.createElement('div');
         productElement.classList.add('product-container');
+        console.log(product);
         productElement.innerHTML = `<div class="product">
-                <a href="product/${product.short_code}?pid=${product.id}&cid=${product.c_id}" data-prod-id="${product.id}" data-cate-id="${product.c_id}"><img src="${src}" alt="${product.name}"></a>
+                <a href="product?pid=${product.code}&cid=${product.cat_code}" data-prod-id="${product.id}" data-cate-id="${product.cat_id}"><img src="${src}" alt="${product.name}"></a>
                 <div class="features">
                     <h5>${product.name}</h5>
                     <div class="star">

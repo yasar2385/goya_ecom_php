@@ -1,34 +1,34 @@
-# Enable the rewrite engine
-RewriteEngine On
+# # Enable the rewrite engine
+# RewriteEngine On
 
-# Set the base directory for the rewrites
-RewriteBase /
+# # Set the base directory for the rewrites
+# RewriteBase /
 
-# Exclude assets (CSS, JS, Images) from being rewritten
-RewriteCond %{REQUEST_URI} !^/goya_php/assets/
+# # Exclude assets (CSS, JS, Images) from being rewritten
+# RewriteCond %{REQUEST_URI} !^/goya_php/assets/
 
 
-RewriteRule ^home\.html$ home.php [L]
+# RewriteRule ^home\.html$ home.php [L]
 
-# Don't apply to URLs that actually exist as files or directories
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+# # Don't apply to URLs that actually exist as files or directories
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
 
-# Don't rewrite requests for assets
-RewriteCond %{REQUEST_URI} !^/assets/
+# # Don't rewrite requests for assets
+# RewriteCond %{REQUEST_URI} !^/assets/
 
-# Product URL rewrite rule
-# RewriteRule ^product/([^/]+)/?$ category.QSA?name=$1 [L,QSA]
+# # Product URL rewrite rule
+# # RewriteRule ^product/([^/]+)/?$ category.QSA?name=$1 [L,QSA]
 
-# # Redirect www to non-www (optional)
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# # # Redirect www to non-www (optional)
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-# # Rewrite product URLs
-# RewriteRule ^product/([^/]+)/?$ product.php?name=$1 [L,QSA]
+# # # Rewrite product URLs
+# # RewriteRule ^product/([^/]+)/?$ product.php?name=$1 [L,QSA]
 
-# Prevent directory listings
-Options -Indexes
+# # Prevent directory listings
+# Options -Indexes
 
-# Handle 404 errors
-ErrorDocument 404 /404.php
+# # Handle 404 errors
+# ErrorDocument 404 /404.php

@@ -1,4 +1,4 @@
-<h1><?php echo htmlspecialchars($product['name']); ?></h1>
-<img src="<?php echo htmlspecialchars($product['image_url']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
-<p>Price: $<?php echo number_format($product['price'], 2); ?></p>
-<p><?php echo htmlspecialchars($product['description']); ?></p>
+<h1><?php echo htmlspecialchars($row['name']); ?></h1>
+<img src="<?php echo htmlspecialchars($row['image_url']); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>">
+<p>Price: $<?php echo number_format($row['price'], 2); ?></p>
+<p><?php echo htmlspecialchars($row['description']); ?></p>

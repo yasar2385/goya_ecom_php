@@ -21,5 +21,6 @@ function findImageByProductName($productName, $productImages, $baseUrl)
             return $product['image'];
         }
     }
-    return $baseUrl . 'assets/images/default-product-image.png'; // Default image if not found
+    // return $baseUrl . 'assets/images/default-product-image.png'; // Default image if not found
+    return 'assets/images/default-product-image.png'; // Default image if not found
 }
